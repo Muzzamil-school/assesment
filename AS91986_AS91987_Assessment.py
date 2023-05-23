@@ -26,7 +26,14 @@ item_hired_label=tk.Label(root, text='Item Hired', font=('Helvetica', 20), fg='b
 num_item_hired_label=tk.Label(root, text='No. Items Hired', font=('Helvetica', 20), fg='black', bg='cadet blue').grid(row=4, column=0)
 delete_row_label=tk.Label(root, text='Delete Row', font=('Helvetica', 20), fg='black', bg='cadet blue').grid(row=5, column=0)
 
-
+#Entry and drop down boxes
+customer_name_entry=Entry(root).grid(column=1, row=1)
+receipt_number_entry=Entry(root).grid(column=1, row=2)
+item_options=['chair', 'table']
+clicked=StringVar()
+drop_down=OptionMenu(root, clicked, *item_options).grid(column=1, row=3)
+num_item_hired_entry=Entry(root).grid(column=1, row=4)
+delete_row_entry=Entry(root).grid(column=1, row=5)
 
 
 
