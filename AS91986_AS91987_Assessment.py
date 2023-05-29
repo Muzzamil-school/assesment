@@ -159,13 +159,13 @@ def check_inputs():
             update_details()
 
 #buttons
-enter_button=Button(root, text='Enter Details', font=('Helvetica', 20), command=check_inputs, width=10)
+enter_button=Button(root, text='Enter Details', font=('Helvetica', 20), command=check_inputs, width=10)#updates details
 enter_button.grid(row=1, column=2, sticky='w')#defines where on main window it should be
-print_button=Button(root, text='Print Details', font=('Helvetica', 20), command=print_details, width=10)
+print_button=Button(root, text='Print Details', font=('Helvetica', 20), command=print_details, width=10)#prints details
 print_button.grid(row=2, column=2, sticky='w')#defines where on main window it should be
-delete_button=Button(root, text='Delete Row', font=('Helvetica', 20), command=delete_row, width=10)
+delete_button=Button(root, text='Delete Row', font=('Helvetica', 20), command=delete_row, width=10)#deletes row
 delete_button.grid(row=3, column=2, sticky='w')#defines where on main window it should be
-exit_button=Button(root, text='Exit', font=('Helvetica', 20), command=quit, width=10)
+exit_button=Button(root, text='Exit', font=('Helvetica', 20), command=quit, width=10)#quits program
 exit_button.grid(row=4, column=2, sticky='w')#defines where on main window it should be
 
 #defining variables
