@@ -96,5 +96,62 @@ def delete_row():
     
     print_details()
 
+#check input function
+def check_inputs():
+    input_check = 0
+
+
+    if len(customer_name_entry.get()) == 0:
+        Label(root, fg="red", text="You Must Fill this Section", bg='cadet blue').grid(column=4, row=1)
+        input_check += 1
+    if len(customer_name_entry.get()) > 0:
+        Label(root, text = "                                                             ", bg='cadet blue').grid(column=4, row=1)
+        try:
+            customer_name_entry.get().split(" ")[1]
+            Label(root, text= "                                                      ", bg='cadet blue').grid(column=4, row=1)
+        except:
+            Label(root, fg="red", text="Please Enter Your FULL Name", bg='cadet blue').grid(column=4, row=1)
+            input_check += 1
+    if len(receipt_number_entry.get()) == 0:
+        Label(root, fg="red", text="You Must Fill this Section", bg='cadet blue').grid(column=4, row=2)
+        input_check += 1
+    if len(receipt_number_entry.get()) > 0:
+        Label(root, text = "                                         ", bg='cadet blue').grid(column=4, row=2)
+    if len(receipt_number_entry.get()) != 0:
+        if receipt_number_entry.get().strip().isdecimal() == False:
+            input_check += 1
+            Label(root, text="Please Enter a Number", fg="red", bg='cadet blue').grid(row=2, column=4)
+        if receipt_number_entry.get().strip().isdecimal() == True:
+            Label(root, text = "                                                            ", bg='cadet blue').grid(column=4, row=2)
+    if (num_item_hired_entry.get().isdigit()):
+        if int(num_item_hired_entry.get()) < 1:
+            Label(root, fg="red", text="Please Enter a Number Between 1-500", bg='cadet blue').grid(column=4, row=4)
+            input_check += 1
+    else:
+        Label(root, fg="red", text="Please Enter a Number Between 1-500", bg='cadet blue').grid(column=4, row=4)
+        input_check = 1
+    if (num_item_hired_entry.get().isdigit()):
+        if int(num_item_hired_entry.get()) > 1:
+            Label(root, text="                                                                ", bg='cadet blue').grid(column=4, row=4)
+        if int(num_item_hired_entry.get()) < 500:
+            Label(root, text="                                                                ", bg='cadet blue').grid(column=4, row=4)
+        if int(num_item_hired_entry.get()) > 500:
+            Label(root, fg="red", text="Please Enter a Number Between 1-500", bg='cadet blue').grid(column=4, row=4)
+            input_check += 1
+        
+    if len(item_hired_entry.get()) == 0:
+        Label(root, fg="red", text="You Must Fill this Section", bg='cadet blue').grid(column=4, row=3)
+        input_check += 1
+    if len(item_hired_entry.get()) > 0:
+        Label(root, text = "                                                 ", bg='cadet blue').grid(column=4, row=3)
+        if item_hired_entry.get().isalpha() == False:
+            input_check += 1
+        if item_hired_entry.get().isalpha() == True:
+            Label(root, text="                                ", bg='cadet blue').grid(column=4,row=3)
+            Label(root, text="                                ", bg='cadet blue').grid(column=4,row=3)
+        if input_check == 0:
+            update_details()
+
+
 
 mainloop()
