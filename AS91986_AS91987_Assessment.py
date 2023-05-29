@@ -152,6 +152,15 @@ def check_inputs():
         if input_check == 0:
             update_details()
 
+#buttons
+enter_button=Button(root, text='Enter Details', font=('Helvetica', 20), command=check_inputs, width=10)
+enter_button.grid(row=1, column=2, sticky='w')
+print_button=Button(root, text='Print Details', font=('Helvetica', 20), command=print_details, width=10)
+print_button.grid(row=2, column=2, sticky='w')
+delete_button=Button(root, text='Delete Row', font=('Helvetica', 20), command=delete_row, width=10)
+delete_button.grid(row=3, column=2, sticky='w')
+exit_button=Button(root, text='Exit', font=('Helvetica', 20), command=quit, width=10)
+exit_button.grid(row=4, column=2, sticky='w')
 
 
 mainloop()
