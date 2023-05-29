@@ -69,6 +69,7 @@ def print_details():
 
 # add each item in the list into its own row
     while name_count < total_entries:
+
         Label(root, text=name_count, bg='cadet blue', fg='black').grid(column=0, row=name_count+10)
         Label(root, text=(customer_details[name_count][0]), bg='cadet blue', fg='black').grid(column=1, row=name_count+10)
         Label(root, text=(customer_details[name_count][1]), bg='cadet blue', fg='black').grid(column=2, row=name_count+10)
@@ -77,8 +78,23 @@ def print_details():
         name_count += 1
         print(name_count)
 
+#delete row function
+def delete_row():
+    global total_entries, delete_row_entry, customer_details
+    del customer_details[int(delete_row_entry.get())] 
+    total_entries -= 1
+    name_count = 0
+    delete_row_entry.delete(0,'end')
+    
+    Label(root, width=100, bg='cadet blue').grid(columnspan=6, row=name_count+10) 
 
+    Label(root, width=100, bg='cadet blue').grid(columnspan=6, row=name_count+11)
 
+    Label(root, width=100, bg='cadet blue').grid(columnspan=6, row=name_count+13)
+    
+    Label(root, width=100, bg='cadet blue').grid(columnspan=6, row=name_count+14)
+    
+    print_details()
 
 
 mainloop()
