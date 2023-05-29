@@ -54,11 +54,11 @@ def update_details():
     receipt_number_entry.delete(0, 'end')
     item_hired_entry.delete(0, 'end')
     num_item_hired_entry.delete(0, 'end')
-    total_entries += 1
+    total_entries+=1
 
 #print details function
 def print_details():
-    name_count = 0
+    name_count=0
     # Create the column labels
     Label(root, font=("Helvetica", 12),text="Row", bg='cadet blue', fg='black').grid(column=0, row=9)
     Label(root, font=("Helvetica", 12),text="Customer's Full Name", bg='cadet blue', fg='black').grid(column=1, row=9)
@@ -74,7 +74,7 @@ def print_details():
         Label(root, text=(customer_details[name_count][1]), bg='cadet blue', fg='black').grid(column=2, row=name_count+10)
         Label(root, text=(customer_details[name_count][2]), bg='cadet blue', fg='black').grid(column=3, row=name_count+10)
         Label(root, text=(customer_details[name_count][3]), bg='cadet blue', fg='black').grid(column=4, row=name_count+10)
-        name_count += 1
+        name_count+=1
         print(name_count)
 
 #delete row function
@@ -83,8 +83,8 @@ def delete_row():
     global total_entries, delete_row_entry, customer_details
     #finds which row is being deleted and deletes it
     del customer_details[int(delete_row_entry.get())] 
-    total_entries -= 1
-    name_count = 0
+    total_entries-=1
+    name_count=0
     delete_row_entry.delete(0,'end')
     #clears row that needs to be deleted
     Label(root, width=100, bg='cadet blue').grid(columnspan=6, row=name_count+10)
@@ -95,41 +95,41 @@ def delete_row():
 
 #check input function
 def check_inputs():
-    input_check = 0
+    input_check=0
     #check that customer name is not blank show error if it is
-    if len(customer_name_entry.get()) == 0:
+    if len(customer_name_entry.get())==0:
         Label(root, fg="red", text="You Must Fill this Section", bg='cadet blue').grid(column=4, row=1)
-        input_check += 1
+        input_check +=1
     if len(customer_name_entry.get()) > 0:
-        Label(root, text = "                                                             ", bg='cadet blue').grid(column=4, row=1)
+        Label(root, text="                                                             ", bg='cadet blue').grid(column=4, row=1)
         #chack that customers full name is entered if not show error
         try:
             customer_name_entry.get().split(" ")[1]
-            Label(root, text= "                                                      ", bg='cadet blue').grid(column=4, row=1)
+            Label(root, text="                                                      ", bg='cadet blue').grid(column=4, row=1)
         except:
             Label(root, fg="red", text="Please Enter Your FULL Name", bg='cadet blue').grid(column=4, row=1)
-            input_check += 1
+            input_check +=1
     #check that customer name is not blank show error if it is
-    if len(receipt_number_entry.get()) == 0:
+    if len(receipt_number_entry.get())==0:
         Label(root, fg="red", text="You Must Fill this Section", bg='cadet blue').grid(column=4, row=2)
-        input_check += 1
+        input_check +=1
     if len(receipt_number_entry.get()) > 0:
-        Label(root, text = "                                         ", bg='cadet blue').grid(column=4, row=2)
+        Label(root, text="                                         ", bg='cadet blue').grid(column=4, row=2)
     #check that receipt number is int if not then show error
-    if len(receipt_number_entry.get()) != 0:
-        if receipt_number_entry.get().strip().isdecimal() == False:
-            input_check += 1
+    if len(receipt_number_entry.get()) !=0:
+        if receipt_number_entry.get().strip().isdecimal()==False:
+            input_check +=1
             Label(root, text="Please Enter a Number", fg="red", bg='cadet blue').grid(row=2, column=4)
-        if receipt_number_entry.get().strip().isdecimal() == True:
-            Label(root, text = "                                                            ", bg='cadet blue').grid(column=4, row=2)
+        if receipt_number_entry.get().strip().isdecimal()==True:
+            Label(root, text="                                                            ", bg='cadet blue').grid(column=4, row=2)
     #check the number of items hired is between 1-500 if not show error
     if (num_item_hired_entry.get().isdigit()):
         if int(num_item_hired_entry.get()) < 1:
             Label(root, fg="red", text="Please Enter a Number Between 1-500", bg='cadet blue').grid(column=4, row=4)
-            input_check += 1
+            input_check +=1
     else:
         Label(root, fg="red", text="Please Enter a Number Between 1-500", bg='cadet blue').grid(column=4, row=4)
-        input_check = 1
+        input_check=1
     if (num_item_hired_entry.get().isdigit()):
         if int(num_item_hired_entry.get()) > 1:
             Label(root, text="                                                                ", bg='cadet blue').grid(column=4, row=4)
@@ -137,21 +137,21 @@ def check_inputs():
             Label(root, text="                                                                ", bg='cadet blue').grid(column=4, row=4)
         if int(num_item_hired_entry.get()) > 500:
             Label(root, fg="red", text="Please Enter a Number Between 1-500", bg='cadet blue').grid(column=4, row=4)
-            input_check += 1
+            input_check +=1
     #check that item hired is not blank show error if it is  
-    if len(item_hired_entry.get()) == 0:
+    if len(item_hired_entry.get())==0:
         Label(root, fg="red", text="You Must Fill this Section", bg='cadet blue').grid(column=4, row=3)
-        input_check += 1
+        input_check +=1
     if len(item_hired_entry.get()) > 0:
-        Label(root, text = "                                                 ", bg='cadet blue').grid(column=4, row=3)
+        Label(root, text="                                                 ", bg='cadet blue').grid(column=4, row=3)
         #check that no numbers have been entered if not show error
-        if item_hired_entry.get().isalpha() == False:
-            input_check += 1
-        if item_hired_entry.get().isalpha() == True:
+        if item_hired_entry.get().isalpha()==False:
+            input_check +=1
+        if item_hired_entry.get().isalpha()==True:
             Label(root, text="                                ", bg='cadet blue').grid(column=4,row=3)
             Label(root, text="                                ", bg='cadet blue').grid(column=4,row=3)
         #if all requirements are met update details
-        if input_check == 0:
+        if input_check==0:
             update_details()
 
 #buttons
