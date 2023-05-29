@@ -64,7 +64,7 @@ def print_details():
     Label(root, font=("Helvetica", 12),text="Customer's Full Name", bg='cadet blue', fg='black').grid(column=1, row=9)
     Label(root, font=("Helvetica", 12),text="Reciept number", bg='cadet blue', fg='black').grid(column=2, row=9)
     Label(root, font=("Helvetica", 12),text="Item hired", bg='cadet blue', fg='black').grid(column=3, row=9)
-    Label(root, font=("Helvetica", 12),text="No. of Itemss Hired", bg='cadet blue', fg='black').grid(column=4, row=9)
+    Label(root, font=("Helvetica", 12),text="No. of Items Hired", bg='cadet blue', fg='black').grid(column=4, row=9)
 
 # add each item in the list into its own row
     while name_count < total_entries:
@@ -107,7 +107,7 @@ def check_inputs():
             customer_name_entry.get().split(" ")[1]
             Label(root, text="                                                      ", bg='cadet blue').grid(column=4, row=1)
         except:
-            Label(root, fg="red", text="Please Enter Your FULL Name", bg='cadet blue').grid(column=4, row=1)
+            Label(root, fg="red", text="Please Enter Your Full Name", bg='cadet blue').grid(column=4, row=1)
             input_check +=1
     #check that receipt number is not blank show error if it is
     if len(receipt_number_entry.get())==0:
@@ -127,10 +127,6 @@ def check_inputs():
         if int(num_item_hired_entry.get()) < 1:
             Label(root, fg="red", text="Please Enter a Number Between 1-500", bg='cadet blue').grid(column=4, row=4)
             input_check +=1
-    else:
-        Label(root, fg="red", text="Please Enter a Number Between 1-500", bg='cadet blue').grid(column=4, row=4)
-        input_check=1
-    if (num_item_hired_entry.get().isdigit()):
         if int(num_item_hired_entry.get()) > 1:
             Label(root, text="                                                                ", bg='cadet blue').grid(column=4, row=4)
         if int(num_item_hired_entry.get()) < 500:
