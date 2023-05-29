@@ -33,13 +33,29 @@ num_item_hired_label.grid(row=4, column=0, pady=5, padx=15, sticky='w')
 delete_row_label=tk.Label(root, text='Delete Row', font=('Helvetica', 20), fg='black', bg='cadet blue')
 delete_row_label.grid(row=5, column=0, pady=5, padx=15, sticky='w')
 
+#entry boxes for people to enter info
+customer_name_entry=Entry(root, width=30)
+customer_name_entry.grid(row=1, column=1, sticky='w')
+receipt_number_entry=Entry(root, width=30)
+receipt_number_entry.grid(row=2, column=1, sticky='w')
+item_hired_entry=Entry(root, width=30)
+item_hired_entry.grid(row=3, column=1, sticky='w')
+num_item_hired_entry=Entry(root, width=30)
+num_item_hired_entry.grid(row=4, column=1, sticky='w')
+delete_row_entry=Entry(root, width=30)
+delete_row_entry.grid(row=5, column=1, sticky='w')
 
-
-
-
-
-
-
+#update details function
+def update_details():
+    global total_entries, customer_name_entry, receipt_number_entry, item_hired_entry, num_item_hired_entry
+    # append each item to its own area of the list
+    customer_details.append([customer_name_entry.get(), receipt_number_entry.get(), item_hired_entry.get(), num_item_hired_entry.get()])
+    #clear the boxes
+    customer_name_entry.delete(0, 'end')
+    receipt_number_entry.delete(0, 'end')
+    item_hired_entry.delete(0, 'end')
+    num_item_hired_entry.delete(0, 'end')
+    total_entries += 1
 
 
 
