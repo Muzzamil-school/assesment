@@ -146,9 +146,9 @@ def check_inputs():
         Label(root, text="                                                 ", bg='cadet blue').grid(column=4, row=3)
         #check that no numbers have been entered if not show error
         if item_hired_entry.get().isalpha()==False:
+            Label(root, fg="red", text="Please Do Not Enter Numbers", bg='cadet blue').grid(column=4, row=3)
             input_check +=1
         if item_hired_entry.get().isalpha()==True:
-            Label(root, text="                                ", bg='cadet blue').grid(column=4,row=3)
             Label(root, text="                                ", bg='cadet blue').grid(column=4,row=3)
         #if all requirements are met update details
         if input_check==0:
