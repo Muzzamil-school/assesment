@@ -49,7 +49,7 @@ def update_details():
     global total_entries, customer_name_entry, receipt_number_entry, item_hired_entry, num_item_hired_entry
     #update each item to its own area of the list
     customer_details.append([customer_name_entry.get(), receipt_number_entry.get(), item_hired_entry.get(), num_item_hired_entry.get()])
-    #clear the entry boxes
+    #clears entry boxes after details are updated 
     customer_name_entry.delete(0, 'end')
     receipt_number_entry.delete(0, 'end')
     item_hired_entry.delete(0, 'end')
