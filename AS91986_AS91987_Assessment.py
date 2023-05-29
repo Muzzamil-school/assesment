@@ -162,5 +162,8 @@ delete_button.grid(row=3, column=2, sticky='w')
 exit_button=Button(root, text='Exit', font=('Helvetica', 20), command=quit, width=10)
 exit_button.grid(row=4, column=2, sticky='w')
 
+#defining variables
+total_entries=0
+customer_details=[]
 
 mainloop()
