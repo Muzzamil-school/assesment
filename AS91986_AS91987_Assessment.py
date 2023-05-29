@@ -57,7 +57,25 @@ def update_details():
     num_item_hired_entry.delete(0, 'end')
     total_entries += 1
 
+#print details function
+def print_details():
+    name_count = 0
+    # Create the column headings
+    Label(root, font=("Helvetica", 12),text="Row", bg='cadet blue', fg='black').grid(column=0, row=9)
+    Label(root, font=("Helvetica", 12),text="Customer's Full Name", bg='cadet blue', fg='black').grid(column=1, row=9)
+    Label(root, font=("Helvetica", 12),text="Reciept number", bg='cadet blue', fg='black').grid(column=2, row=9)
+    Label(root, font=("Helvetica", 12),text="Item hired", bg='cadet blue', fg='black').grid(column=3, row=9)
+    Label(root, font=("Helvetica", 12),text="No. of Itemss Hired", bg='cadet blue', fg='black').grid(column=4, row=9)
 
+# add each item in the list into its own row
+    while name_count < total_entries:
+        Label(root, text=name_count, bg='cadet blue', fg='black').grid(column=0, row=name_count+10)
+        Label(root, text=(customer_details[name_count][0]), bg='cadet blue', fg='black').grid(column=1, row=name_count+10)
+        Label(root, text=(customer_details[name_count][1]), bg='cadet blue', fg='black').grid(column=2, row=name_count+10)
+        Label(root, text=(customer_details[name_count][2]), bg='cadet blue', fg='black').grid(column=3, row=name_count+10)
+        Label(root, text=(customer_details[name_count][3]), bg='cadet blue', fg='black').grid(column=4, row=name_count+10)
+        name_count += 1
+        print(name_count)
 
 
 
