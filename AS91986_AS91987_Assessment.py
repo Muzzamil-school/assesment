@@ -109,7 +109,7 @@ def check_inputs():
         except:
             Label(root, fg="red", text="Please Enter Your FULL Name", bg='cadet blue').grid(column=4, row=1)
             input_check +=1
-    #check that customer name is not blank show error if it is
+    #check that receipt number is not blank show error if it is
     if len(receipt_number_entry.get())==0:
         Label(root, fg="red", text="You Must Fill this Section", bg='cadet blue').grid(column=4, row=2)
         input_check +=1
