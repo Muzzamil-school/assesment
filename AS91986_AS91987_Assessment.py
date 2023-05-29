@@ -100,7 +100,7 @@ def check_inputs():
     if len(customer_name_entry.get())==0:
         Label(root, fg="red", text="You Must Fill this Section", bg='cadet blue').grid(column=4, row=1)
         input_check +=1
-    if len(customer_name_entry.get()) > 0:
+    if len(customer_name_entry.get())>0:
         Label(root, text="                                                             ", bg='cadet blue').grid(column=4, row=1)
         #chack that customers full name is entered if not show error
         try:
@@ -113,10 +113,10 @@ def check_inputs():
     if len(receipt_number_entry.get())==0:
         Label(root, fg="red", text="You Must Fill this Section", bg='cadet blue').grid(column=4, row=2)
         input_check +=1
-    if len(receipt_number_entry.get()) > 0:
+    if len(receipt_number_entry.get())>0:
         Label(root, text="                                         ", bg='cadet blue').grid(column=4, row=2)
     #check that receipt number is int if not then show error
-    if len(receipt_number_entry.get()) !=0:
+    if len(receipt_number_entry.get())!=0:
         if receipt_number_entry.get().strip().isdecimal()==False:
             input_check +=1
             Label(root, text="Please Enter a Number", fg="red", bg='cadet blue').grid(row=2, column=4)
@@ -124,21 +124,20 @@ def check_inputs():
             Label(root, text="                                                            ", bg='cadet blue').grid(column=4, row=2)
     #check the number of items hired is between 1-500 if not show error
     if (num_item_hired_entry.get().isdigit()):
-        if int(num_item_hired_entry.get()) < 1:
+        if int(num_item_hired_entry.get())<1:
             Label(root, fg="red", text="Please Enter a Number Between 1-500", bg='cadet blue').grid(column=4, row=4)
-            input_check +=1
-        if int(num_item_hired_entry.get()) > 1:
+        if int(num_item_hired_entry.get())>1:
             Label(root, text="                                                                ", bg='cadet blue').grid(column=4, row=4)
-        if int(num_item_hired_entry.get()) < 500:
+        if int(num_item_hired_entry.get())<500:
             Label(root, text="                                                                ", bg='cadet blue').grid(column=4, row=4)
-        if int(num_item_hired_entry.get()) > 500:
+        if int(num_item_hired_entry.get())>500:
             Label(root, fg="red", text="Please Enter a Number Between 1-500", bg='cadet blue').grid(column=4, row=4)
             input_check +=1
     #check that item hired is not blank show error if it is  
     if len(item_hired_entry.get())==0:
         Label(root, fg="red", text="You Must Fill this Section", bg='cadet blue').grid(column=4, row=3)
         input_check +=1
-    if len(item_hired_entry.get()) > 0:
+    if len(item_hired_entry.get())>0:
         Label(root, text="                                                 ", bg='cadet blue').grid(column=4, row=3)
         #check that no numbers have been entered if not show error
         if item_hired_entry.get().isalpha()==False:
