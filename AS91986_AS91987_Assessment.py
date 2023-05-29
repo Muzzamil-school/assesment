@@ -8,42 +8,42 @@ import tkinter as tk
 
 #main window
 root=Tk()
-root.title("Julie's Party Hire")
-root.geometry("1000x400")
-root.configure(bg='cadet blue')
+root.title("Julie's Party Hire")#window title
+root.geometry("1000x400")#define window size
+root.configure(bg='cadet blue')#window background colour
 
 #title julies party hire
 title_label=tk.Label(root, text='Julies Party Hire', font=('Helvetica', 45), fg='black', bg='cadet blue')
-title_label.grid(row=0, column=1, sticky='w')
+title_label.grid(row=0, column=1, sticky='w')#defines where on main window it should be
 
 #add logo for julies party hire
-logo_image=tk.PhotoImage(file='Julies_Party_Hire.png')
+logo_image=tk.PhotoImage(file='Julies_Party_Hire.png')#inserts image
 logo=tk.Label(root, image=logo_image, height=70, width=120)
-logo.grid(row=0, column=0, sticky='nw')
+logo.grid(row=0, column=0, sticky='nw')#defines where on main window it should be
 
 #labels for entry boxes 
 customer_name_label=tk.Label(root, text='Customer Full Name', font=('Helvetica', 20), fg='black', bg='cadet blue')
-customer_name_label.grid(row=1, column=0, pady=5, padx=15, sticky='w')
+customer_name_label.grid(row=1, column=0, pady=5, padx=15, sticky='w')#defines where on main window it should be
 receipt_number_label=tk.Label(root, text='Receipt Number', font=('Helvetica', 20), fg='black', bg='cadet blue')
-receipt_number_label.grid(row=2, column=0, pady=5, padx=15, sticky='w')
+receipt_number_label.grid(row=2, column=0, pady=5, padx=15, sticky='w')#defines where on main window it should be
 item_hired_label=tk.Label(root, text='Item Hired', font=('Helvetica', 20), fg='black', bg='cadet blue')
-item_hired_label.grid(row=3, column=0, pady=5, padx=15, sticky='w')
+item_hired_label.grid(row=3, column=0, pady=5, padx=15, sticky='w')#defines where on main window it should be
 num_item_hired_label=tk.Label(root, text='No. Items Hired', font=('Helvetica', 20), fg='black', bg='cadet blue')
-num_item_hired_label.grid(row=4, column=0, pady=5, padx=15, sticky='w')
+num_item_hired_label.grid(row=4, column=0, pady=5, padx=15, sticky='w')#defines where on main window it should be
 delete_row_label=tk.Label(root, text='Delete Row', font=('Helvetica', 20), fg='black', bg='cadet blue')
-delete_row_label.grid(row=5, column=0, pady=5, padx=15, sticky='w')
+delete_row_label.grid(row=5, column=0, pady=5, padx=15, sticky='w')#defines where on main window it should be
 
 #entry boxes for people to enter info
 customer_name_entry=Entry(root, width=30)
-customer_name_entry.grid(row=1, column=1, sticky='w')
+customer_name_entry.grid(row=1, column=1, sticky='w')#defines where on main window it should be
 receipt_number_entry=Entry(root, width=30)
-receipt_number_entry.grid(row=2, column=1, sticky='w')
+receipt_number_entry.grid(row=2, column=1, sticky='w')#defines where on main window it should be
 item_hired_entry=Entry(root, width=30)
-item_hired_entry.grid(row=3, column=1, sticky='w')
+item_hired_entry.grid(row=3, column=1, sticky='w')#defines where on main window it should be
 num_item_hired_entry=Entry(root, width=30)
-num_item_hired_entry.grid(row=4, column=1, sticky='w')
+num_item_hired_entry.grid(row=4, column=1, sticky='w')#defines where on main window it should be
 delete_row_entry=Entry(root, width=30)
-delete_row_entry.grid(row=5, column=1, sticky='w')
+delete_row_entry.grid(row=5, column=1, sticky='w')#defines where on main window it should be
 
 #update details function
 def update_details():
@@ -86,7 +86,7 @@ def delete_row():
     name_count = 0
     delete_row_entry.delete(0,'end')
     
-    Label(root, width=100, bg='cadet blue').grid(columnspan=6, row=name_count+10) 
+    Label(root, width=100, bg='cadet blue').grid(columnspan=6, row=name_count+10)
 
     Label(root, width=100, bg='cadet blue').grid(columnspan=6, row=name_count+11)
 
@@ -154,13 +154,13 @@ def check_inputs():
 
 #buttons
 enter_button=Button(root, text='Enter Details', font=('Helvetica', 20), command=check_inputs, width=10)
-enter_button.grid(row=1, column=2, sticky='w')
+enter_button.grid(row=1, column=2, sticky='w')#defines where on main window it should be
 print_button=Button(root, text='Print Details', font=('Helvetica', 20), command=print_details, width=10)
-print_button.grid(row=2, column=2, sticky='w')
+print_button.grid(row=2, column=2, sticky='w')#defines where on main window it should be
 delete_button=Button(root, text='Delete Row', font=('Helvetica', 20), command=delete_row, width=10)
-delete_button.grid(row=3, column=2, sticky='w')
+delete_button.grid(row=3, column=2, sticky='w')#defines where on main window it should be
 exit_button=Button(root, text='Exit', font=('Helvetica', 20), command=quit, width=10)
-exit_button.grid(row=4, column=2, sticky='w')
+exit_button.grid(row=4, column=2, sticky='w')#defines where on main window it should be
 
 #defining variables
 total_entries=0
