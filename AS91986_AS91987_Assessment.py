@@ -89,8 +89,8 @@ def delete_row():
     #clears row that needs to be deleted
     Label(root, width=100, bg='cadet blue').grid(columnspan=6, row=name_count+10)
     Label(root, width=100, bg='cadet blue').grid(columnspan=6, row=name_count+11)
+    Label(root, width=100, bg='cadet blue').grid(columnspan=6, row=name_count+12)
     Label(root, width=100, bg='cadet blue').grid(columnspan=6, row=name_count+13)
-    Label(root, width=100, bg='cadet blue').grid(columnspan=6, row=name_count+14)
     print_details()
 
 #check input function
