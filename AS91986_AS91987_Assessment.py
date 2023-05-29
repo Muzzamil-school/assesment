@@ -38,6 +38,23 @@ delete_row_label.grid(row=5, column=0, pady=5, padx=15, sticky='w')
 
 
 
+#entry boxes for people to enter info
+customer_name_entry=Entry(root, width=30)
+customer_name_entry.grid(row=1, column=1, sticky='w')
+receipt_number_entry=Entry(root, width=30)
+receipt_number_entry.grid(row=2, column=1, sticky='w')
+item_hired_entry=Entry(root, width=30)
+item_hired_entry.grid(row=3, column=1, sticky='w')
+num_item_hired_entry=Entry(root, width=30)
+num_item_hired_entry.grid(row=4, column=1, sticky='w')
+delete_row_entry=Entry(root, width=30)
+delete_row_entry.grid(row=5, column=1, sticky='w')
+
+
+
+
+
+
 
 
 
