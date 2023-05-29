@@ -1,8 +1,6 @@
 #Muzzamil
 #This program is for julies party hire
 
-
-
 from tkinter import *
 import tkinter as tk
 
@@ -18,19 +16,19 @@ title_label.grid(row=0, column=1, sticky='w')#defines where on main window it sh
 
 #add logo for julies party hire
 logo_image=tk.PhotoImage(file='Julies_Party_Hire.png')#imports image
-logo=tk.Label(root, image=logo_image, height=70, width=120)#1nserts image onto main window
+logo=tk.Label(root, image=logo_image, height=70, width=120)#inserts image onto main window
 logo.grid(row=0, column=0, sticky='nw')#defines where on main window it should be
 
 #labels for entry boxes 
-customer_name_label=tk.Label(root, text='Customer Full Name', font=('Helvetica', 20), fg='black', bg='cadet blue')
+customer_name_label=tk.Label(root, text='Customer Full Name', font=('Helvetica', 20), fg='black', bg='cadet blue')#shows what info to enter into entry box
 customer_name_label.grid(row=1, column=0, pady=5, padx=15, sticky='w')#defines where on main window it should be
-receipt_number_label=tk.Label(root, text='Receipt Number', font=('Helvetica', 20), fg='black', bg='cadet blue')
+receipt_number_label=tk.Label(root, text='Receipt Number', font=('Helvetica', 20), fg='black', bg='cadet blue')#shows what info to enter into entry box
 receipt_number_label.grid(row=2, column=0, pady=5, padx=15, sticky='w')#defines where on main window it should be
-item_hired_label=tk.Label(root, text='Item Hired', font=('Helvetica', 20), fg='black', bg='cadet blue')
+item_hired_label=tk.Label(root, text='Item Hired', font=('Helvetica', 20), fg='black', bg='cadet blue')#shows what info to enter into entry box
 item_hired_label.grid(row=3, column=0, pady=5, padx=15, sticky='w')#defines where on main window it should be
-num_item_hired_label=tk.Label(root, text='No. Items Hired', font=('Helvetica', 20), fg='black', bg='cadet blue')
+num_item_hired_label=tk.Label(root, text='No. Items Hired', font=('Helvetica', 20), fg='black', bg='cadet blue')#shows what info to enter into entry box
 num_item_hired_label.grid(row=4, column=0, pady=5, padx=15, sticky='w')#defines where on main window it should be
-delete_row_label=tk.Label(root, text='Delete Row', font=('Helvetica', 20), fg='black', bg='cadet blue')
+delete_row_label=tk.Label(root, text='Delete Row', font=('Helvetica', 20), fg='black', bg='cadet blue')#shows what info to enter into entry box
 delete_row_label.grid(row=5, column=0, pady=5, padx=15, sticky='w')#defines where on main window it should be
 
 #entry boxes for people to enter info
@@ -81,20 +79,18 @@ def print_details():
 
 #delete row function
 def delete_row():
+    #these are global variables used
     global total_entries, delete_row_entry, customer_details
+    #finds which row is being deleted and deletes it
     del customer_details[int(delete_row_entry.get())] 
     total_entries -= 1
     name_count = 0
     delete_row_entry.delete(0,'end')
     #clears row that needs to be deleted
     Label(root, width=100, bg='cadet blue').grid(columnspan=6, row=name_count+10)
-
     Label(root, width=100, bg='cadet blue').grid(columnspan=6, row=name_count+11)
-
     Label(root, width=100, bg='cadet blue').grid(columnspan=6, row=name_count+13)
-    
     Label(root, width=100, bg='cadet blue').grid(columnspan=6, row=name_count+14)
-    
     print_details()
 
 #check input function
