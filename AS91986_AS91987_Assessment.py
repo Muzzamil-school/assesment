@@ -122,6 +122,15 @@ def check_inputs():
             Label(root, text="Please Enter a Number", fg="red", bg='cadet blue').grid(row=2, column=4)
         if receipt_number_entry.get().strip().isdecimal()==True:
             Label(root, text="                                                            ", bg='cadet blue').grid(column=4, row=2)
+    #check the number of items hired is not empty
+    if len(num_item_hired_entry.get())==0:
+            Label(root, fg="red", text="You Must Fill this Section", bg='cadet blue').grid(column=4, row=4)
+            input_check+=1
+     #check the number of items hired is an int
+    if len(num_item_hired_entry.get())!=0:
+        if num_item_hired_entry.get().strip().isdecimal()==False:
+            input_check +=1
+            Label(root, text="Please Enter a Number", fg="red", bg='cadet blue').grid(row=4, column=4)
     #check the number of items hired is between 1-500 if not show error
     if (num_item_hired_entry.get().isdigit()):
         if int(num_item_hired_entry.get())<1:
