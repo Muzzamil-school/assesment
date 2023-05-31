@@ -142,6 +142,10 @@ def check_inputs():
         if int(num_item_hired_entry.get())>500:
             Label(root, fg="red", text="Please Enter a Number Between 1-500", bg='cadet blue').grid(column=4, row=4)
             input_check +=1
+    #check the number of items hired is not =0
+    if int(num_item_hired_entry.get())==0:
+        Label(root, fg="red", text="Please Enter a Number Between 1-500", bg='cadet blue').grid(column=4, row=4)
+        input_check +=1
     #check that item hired is not blank show error if it is  
     if len(item_hired_entry.get())==0:
         Label(root, fg="red", text="You Must Fill this Section", bg='cadet blue').grid(column=4, row=3)
